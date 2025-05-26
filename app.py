@@ -74,7 +74,10 @@ if sheet_url:
 
         # Title
         st.markdown("<h1 style='text-align: center;'>📊 Brainscraft Finance Dashboard</h1>", unsafe_allow_html=True)
+        st.markdown("<br>", unsafe_allow_html=True)
         st.markdown(f"<h3 style='text-align: center; color: gray;'>Finance Overview for {selected_month} {selected_year}</h3>", unsafe_allow_html=True)
+        st.markdown("<br>", unsafe_allow_html=True)
+        st.markdown("<br>", unsafe_allow_html=True)
 
         # Summary cards
         col1, col2, col3, col4 = st.columns(4)
@@ -125,9 +128,27 @@ if sheet_url:
             else:
                 st.info("No income recorded for this month.")
 
+
+        st.markdown("<br>", unsafe_allow_html=True)
         # Transaction Table
         st.subheader("📋 Transactions")
         st.dataframe(filtered_df[["Date", "Type", "Category", "Description", "Amount"]], use_container_width=True)
+        st.markdown("<br>", unsafe_allow_html=True)
+        st.markdown("<br>", unsafe_allow_html=True)
+        st.markdown("""
+                <style>
+                .footer {
+                    position: fixed;
+                    bottom: 0;
+                    width: 100%;
+                    text-align: center;
+                    color: gray;
+                    padding: 10px;
+                    background-color: white;
+                }
+                </style>
+                <div class="footer">© 2025 All rights reserved by <strong>Brainscraft Technologies</strong>.</div>
+            """, unsafe_allow_html=True)
     else:
         st.warning("No data found in sheet.")
 else:
