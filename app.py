@@ -29,7 +29,7 @@ user_sheet_url = st.sidebar.text_input(
 
 def convert_to_csv_url(gsheet_url):
     try:
-        if "edit#gid=" in gsheet_url:
+        if "edit?usp=sharing" in gsheet_url:
             sheet_id = gsheet_url.split("/d/")[1].split("/")[0]
             return f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv"
         elif "export?format=csv" in gsheet_url:
